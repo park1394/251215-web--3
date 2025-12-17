@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Vision | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #050505;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { 
+            background-color: var(--dark-bg); 
+            color: #fff; 
+            font-family: 'Pretendard', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 배경 우주 느낌 광원 */
+        .universe {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(188, 19, 254, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* 상단 네비게이션 */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 30px 0; position: sticky; top: 0; z-index: 100;
+            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px);
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; color: var(--neon-blue); }
+        .nav-links a { color: #888; text-decoration: none; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+        /* 히어로 섹션 */
+        .hero {
+            height: 90vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: flex-start;
+        }
+        .hero span { color: var(--neon-purple); font-weight: bold; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 15px; }
+        .hero h1 { 
+            font-size: clamp(3rem, 8vw, 6rem); line-height: 1.1; margin-bottom: 30px;
+            background: linear-gradient(to right, #fff, #555);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { max-width: 500px; color: #aaa; font-size: 1.1rem; margin-bottom: 40px; }
+
+        /* 버튼 스타일 */
+        .cta-btn {
+            padding: 15px 35px; border: 1px solid var(--neon-blue); color: var(--neon-blue);
+            text-decoration: none; border-radius: 50px; font-weight: bold;
+            position: relative; overflow: hidden; transition: 0.4s;
+        }
+        .cta-btn:hover {
+            background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        /* 그리드 섹션 */
+        .section-title { margin: 150px 0 50px; font-size: 2rem; position: relative; }
+        .section-title::before {
+            content: ""; position: absolute; left: -20px; top: 50%; width: 5px; height: 30px;
+            background: var(--neon-purple); transform: translateY(-50%);
+        }
+
+        .work-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;
+        }
+        .work-card {
+            height: 300px; background: #111; border-radius: 20px; overflow: hidden;
+            position: relative; border: 1px solid #222; transition: 0.5s;
+        }
+        .work-card:hover { border-color: var(--neon-purple); transform: scale(1.02); }
+        .work-info {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        }
+
+        /* 푸터 */
+        footer { padding: 100px 0 50px; text-align: center; border-top: 1px solid #111; margin-top: 100px; color: #444; }
+
+        @media (max-width: 768px) {
+            .work-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="universe"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">NEXT_GEN</div>
+            <div class="nav-links">
+                <a href="#work">WORK</a>
+                <a href="#about">ABOUT</a>
+                <a href="mailto:email@example.com">CONTACT</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <span>AVAILABLE FOR FREELANCE</span>
+            <h1>Digital<br>Experience<br><span style="color: #fff;">Architect</span></h1>
+            <p>상상을 현실로 구현하는 프론트엔드 개발자입니다. 기술과 예술의 경계를 허무는 작업을 지향합니다.</p>
+            <a href="#work" class="cta-btn">View My Projects</a>
+        </section>
+
+        <h2 class="section-title" id="work">Selected Works</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="work-info">
+                    <h3>AI Dashboard Interface</h3>
+                    <p style="font-size: 0.8rem; color: #888;">Design & Development</p>
+                </div>
+            </div>
+            <div class="work-card">
+                <div class="work-info">
+                    <h3>3D Web Interaction</h3>
+                    <p style="font-size: 0.8rem; color: #888;">Creative Coding</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Creative Developer Portfolio. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+<head>
+    <title>WEB1 - WEB </title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <h2>WEB이란 무엇인가?</h2>
+    <p style="margin-top: 40px;">
+        The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform.[1] It was
+        originally a hypertext document management system[2] accessed over the Internet.[3]
+        The resources of the Web are transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users by
+        a software application called a web browser, and are published by a software application called a web server.
+        Web resources may be any type of downloaded media, but web pages are hypertext documents formatted in
+        Hypertext Markup Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs, which permits
+        users
+        to navigate to other web resources. In addition to text, web pages may contain references to images, video,
+        audio, and
+        software components, which are either displayed or internally executed in the user's web browser to render pages
+        or
+        streams of multimedia conten
+    </p>
+</body>
+
+</html>
